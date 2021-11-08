@@ -26,7 +26,6 @@ const Auth = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(userCredential);
         })
         .catch((error) => {
           console.log(error);

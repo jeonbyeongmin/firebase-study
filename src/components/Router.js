@@ -8,12 +8,10 @@ const AppRouter = ({ isLoggedIn }) => {
       <Routes>
         {isLoggedIn ? (
           <>
-            {console.log("home")}
             <Route exact path="/" element={<Home />} />
           </>
         ) : (
           <>
-            {console.log("auth")}
             <Route exact path="/" element={<Auth />} />
           </>
         )}
