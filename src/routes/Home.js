@@ -9,6 +9,7 @@ import {
   orderBy,
   onSnapshot,
 } from "firebase/firestore";
+import Nweet from "components/Nweet";
 
 const Home = ({ userObj }) => {
   console.log(userObj);
@@ -44,6 +45,14 @@ const Home = ({ userObj }) => {
 
     setNweet("");
   };
+
+  // const onDelete = async(e) => {
+
+  //   if(window.confirm("삭제하시겠습니까?")) {
+  //     console.log(weetObj.id)
+  //   }
+  // }
+
   const onChange = (e) => {
     const {
       target: { value },
@@ -65,9 +74,7 @@ const Home = ({ userObj }) => {
       </form>
       <div>
         {nweets.map((nweet) => (
-          <div key={nweet.id}>
-            <h4>{nweet.text}</h4>
-          </div>
+          <Nweet key={nweet.id} nweetObj={nweet} />
         ))}
       </div>
     </div>
